@@ -2,51 +2,24 @@
 
 ![GithubX](assets/Icon/Octocat.png)
 
-Main Goal: Make Categorizing Github Repositories Easier and Enjoyable.
+This thing was planned as some w10m remake... 
 
-![screen shot uwp](assets/Uwp/Screenshots/MainPage.png)
+I tried to "switch" from githubx project net from standard 2.0 to 1.4" XF project... but something went wrong :(
 
-| | Server | WebClient | UWP | Android | iOS | Gtk#
-| :- | :- | :- | :- |:- | :- | :-
-| Plan          | ❌ | ❌ | ✔ | ❌ | ❌ | ❌
-| ToDo List     | [🔗][todo4] | [🔗][todo5] | [🔗][todo1] | [🔗][todo2] | [🔗][todo3] | [🔗][todo6]
-| UI Sketch     | ❌ | ❌ | ✔[🔗][xduwp] | ❌ | ❌ | ❌
-| UI Dev        | ❌ | ❌ | ✔[🔗][scrnuwp] | ❌ | ❌ | ❌
-| Code          | ❌ | ❌ | ▶[🔗][suwp]| ❌[🔗][sand] | ❌ | ❌
-| Test          | ❌ | ❌ | ❌| ❌ | ❌ | ❌
-| Docs          | ❌ | ❌ | ❌| ❌ | ❌ | ❌
-| Build         | ❌ | ❌ | ![-][uwpbuild] | ❌ | ❌ | ❌| ❌
-| Released      | ❌ | ❌ | [![-][msstore-img]][msstore-url] | ❌ | ❌ | ❌| ❌
+## About 
 
-```emoji
-🔗: link | ✔:  Done | ❌: Not Started | ⏹: Stopped | ⏸: Paused | ▶:  Working on it
-```
-## [📃See Docs Here](https://yazdipour.github.io/githubx/)
+Simple multi-platform (Xamarin Forms-based) Github client for Windows 10 (Mobile). Work is not not complete :(
 
-## Donate
+## Credits
+- [Archived GitHubX project](https://github.com/prajjwaldimri/GithubXamarin) (UWP , sdk 17xxx) 
 
-[![Donate](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoff.ee/XrTW5YQDy)
 
-[![Donate RIAL.IR](https://img.shields.io/badge/donate-IRAN-blue.svg)](https://www.payping.ir/yazdipour)
+## ..
+AS IS. RnD only. No support. DIY!
 
-[scrnuwp]:assets/Uwp/Screenshots
-[xduwp]:assets/Uwp/Sketch
-[xdand]:assets/Android/
-[xdcli]:assets/WebClient/
-[xdser]:assets/Server/
-[xdios]:assets/iOS/
-[suwp]: source/GithubX.UWP/
-[sand]: source/GithubX.Android/
-[sios]: source/GithubX.iOS/
-[sgtk]: source/
-[scli]: source/
-[sser]: source/
-[todo1]: https://github.com/yazdipour/githubx/projects/1
-[todo2]: https://github.com/yazdipour/githubx/projects/2
-[todo3]: https://github.com/yazdipour/githubx/projects/3
-[todo4]: https://github.com/yazdipour/githubx/projects/4
-[todo5]: https://github.com/yazdipour/githubx/projects/5
-[todo6]: https://github.com/yazdipour/githubx/projects/6
-[msstore-url]: https://www.microsoft.com/store/apps/9P7D7PD6FBCV
-[msstore-img]: assets/Stores/msstore.png
-[uwpbuild]: https://build.appcenter.ms/v0.1/apps/dd05cbde-11b6-45db-8d2f-f65b1791e4a1/branches/master/badge
+## .
+[m][e] :: Media Explorer 2021 -- 2023
+
+
+  
+

@@ -1,0 +1,25 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4</TargetFrameworks>
+    <!--TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap15063</TargetFrameworks-->
+ <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks)</TargetFrameworks>
+    <AssemblyName>Akavache.Drawing</AssemblyName>
+    <RootNamespace>Akavache</RootNamespace>
+    <Description>An asynchronous, persistent key-value store for desktop and mobile applications on .NET</Description>
+    <PackageId>Akavache.Drawing</PackageId>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Remove="Foundation" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Akavache.Core\Akavache.Core.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Splat.Drawing" Version="1.*" />
+  </ItemGroup>
+</Project>

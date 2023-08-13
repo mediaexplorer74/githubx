@@ -1,0 +1,101 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks)</TargetFrameworks>
+    <AssemblyName>Akavache.Core</AssemblyName>
+    <RootNamespace>Akavache</RootNamespace>
+    <Description>An asynchronous, persistent key-value store for desktop and mobile applications on .NET</Description>
+    <PackageId>akavache.core</PackageId>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="System.Data.HashFunction.Core" Version="2.0.0" />
+    <PackageReference Include="System.Reactive" Version="3.0.0" />
+    <PackageReference Include="Splat" Version="3.0.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.0.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Remove="Foundation" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Platforms\**\*.cs" />
+    <None Include="Platforms\**\*.cs" />
+    <Compile Include="Platforms\shared\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" !$(TargetFramework.StartsWith('uap'))">
+    <Compile Include="Platforms\shared-not-uwp\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('uap')) ">
+    <Compile Include="Platforms\uap\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-ios')) or $(TargetFramework.StartsWith('net7.0-ios')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.TVOS')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-tvos')) or $(TargetFramework.StartsWith('net7.0-tvos')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-maccatalyst')) or $(TargetFramework.StartsWith('net7.0-maccatalyst')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="netstandard" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-macos')) or $(TargetFramework.StartsWith('net7.0-macos')) ">
+    <Compile Include="Platforms\apple-common\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="Platforms\android\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('net6.0-android')) or $(TargetFramework.StartsWith('net7.0-android')) ">
+    <Compile Include="Platforms\android\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('tizen40')) ">
+    <Compile Include="Platforms\tizen\**\*.cs" />
+    <Compile Include="Platforms\xamarin-mobile\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\Admin\source\repos\!GitHub\githubx-14\src\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Platforms\shared\DefaultAkavacheHttpClientFactory.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,59 @@
+<Project>  
+  <PropertyGroup>
+    <Copyright>Copyright (c) .NET Foundation and Contributors</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/reactiveui/akavache/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/reactiveui/styleguide/master/logo_akavache/main.png</PackageIconUrl>
+    <Authors>.NET Foundation and Contributors</Authors>
+    <Owners>xanaisbettsx;ghuntley</Owners>
+    <PackageTags>Akavache;Cache;Xamarin;Sqlite3;Magic</PackageTags>
+    <PackageReleaseNotes>https://github.com/reactiveui/akavache/releases</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/reactiveui/akavache</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsTestProject>$(MSBuildProjectName.Contains('Tests'))</IsTestProject>
+    <DebugType>Embedded</DebugType>
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Optional: Include PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- disable sourcelink on mono, to workaround https://github.com/dotnet/sourcelink/issues/155 -->
+    <WarningsAsErrors>CS8600;CS8602;CS8603;CS8604;CS8605;CS8606;CS8607;CS8608;CS8609;CS8610;CS8611;CS8612;CS8613;CS8614;CS8615;CS8616;CS8617;CS8618;CS8619;CS8620;CS8621;CS8622;CS8623;CS8624;CS8625;CS8626;CS8627;CS8628;CS8629;CS8630;CS8634;CS8766;CS8767</WarningsAsErrors>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoWarn>IDE1006;SA1313;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\LICENSE" Pack="true" PackagePath="LICENSE" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Remove="Foundation" />
+    <Using Include="System.Reactive"/>
+    <Using Include="System.Reactive.Concurrency"/>
+    <Using Include="System.Reactive.Linq"/>
+    <Using Include="System.Reactive.Subjects"/>
+    <Using Include="System.Text"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IsTestProject)' != 'true' and '$(SourceLinkEnabled)' != 'false'">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="stylecop.analyzers" Version="1.2.0-beta.507" PrivateAssets="all" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.3.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+ </Project>

@@ -1,0 +1,32 @@
+<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+     <TargetFrameworks>netstandard1.4</TargetFrameworks>
+     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks)</TargetFrameworks>
+    <AssemblyName>Akavache</AssemblyName>
+    <RootNamespace>Akavache</RootNamespace>
+    <Description>An asynchronous, persistent key-value store for desktop and mobile applications on .NET</Description>
+    <PackageId>akavache</PackageId>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\Admin\source\repos\!GitHub\githubx-14\src\stylecop.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Remove="Foundation" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin')) ">
+    <Reference Include="netstandard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Akavache.Sqlite3\Akavache.Sqlite3.csproj" />
+  </ItemGroup>
+</Project>
