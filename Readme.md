@@ -8,7 +8,7 @@ I tried to "switch" yazdipour's githubx project net from standard 2.0 to 1.4" XF
 
 ## About 
 
-Simple multi-platform (Xamarin Forms-based) Github client for Windows 10 (Mobile). Work is not not complete :(
+Simple multi-platform (Xamarin Forms-based) Github client for Windows 10 (Mobile). Work is not complete!
 
 ## Credits
 - [Archived GitHubX project](https://github.com/yazdipour/githubx) (UWP , sdk 17xxx) 
