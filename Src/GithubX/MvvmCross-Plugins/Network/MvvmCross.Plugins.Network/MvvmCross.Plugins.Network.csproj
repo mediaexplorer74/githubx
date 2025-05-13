@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\bin\Debug\Mvx\Portable\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\..\..\bin\Release\Mvx\Portable\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Reachability\IMvxReachability.cs" />
+    <Compile Include="Rest\IMvxAbortable.cs" />
+    <Compile Include="Rest\IMvxJsonRestClient.cs" />
+    <Compile Include="Rest\IMvxRestClient.cs" />
+    <Compile Include="Rest\MvxContentType.cs" />
+    <Compile Include="Rest\MvxDecodedRestResponse.cs" />
+    <Compile Include="Rest\MvxJsonRestClient.cs" />
+    <Compile Include="Rest\MvxJsonRestRequest.cs" />
+    <Compile Include="Reachability\MvxReachabilityStatus.cs" />
+    <Compile Include="Rest\MvxKnownOptions.cs" />
+    <Compile Include="Rest\MvxMultiPartFormRestRequest.cs" />
+    <Compile Include="Rest\MvxRestClient.cs" />
+    <Compile Include="Rest\MvxRestRequest.cs" />
+    <Compile Include="Rest\MvxRestRequestAsyncHandle.cs" />
+    <Compile Include="Rest\MvxRestResponse.cs" />
+    <Compile Include="Rest\MvxStreamRestRequest.cs" />
+    <Compile Include="Rest\MvxStreamRestResponse.cs" />
+    <Compile Include="Rest\MvxStringRestRequest.cs" />
+    <Compile Include="Rest\MvxTextBasedRestRequest.cs" />
+    <Compile Include="Rest\MvxVerbs.cs" />
+    <Compile Include="Rest\MvxWwwFormRestRequest.cs" />
+    <Compile Include="PluginLoader.cs" />
+    <Compile Include="..\..\..\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MvvmCross.Platform\MvvmCross.Platform.csproj" />
+    <ProjectReference Include="..\..\File\MvvmCross.Plugins.File\MvvmCross.Plugins.File.csproj">
+      <Project>{19EE04D6-7EE0-4FE8-AB10-4623D93F165A}</Project>
+      <Name>MvvmCross.Plugins.File</Name>
+    </ProjectReference>
+  </ItemGroup>
+ 
+ <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

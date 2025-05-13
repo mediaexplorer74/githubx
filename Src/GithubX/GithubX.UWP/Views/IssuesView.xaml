@@ -1,0 +1,64 @@
+﻿<views:MvxWindowsPage
+    x:Class="GithubXamarin.UWP.Views.IssuesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:MvvmCross.WindowsUWP.Views"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:userControls="using:GithubXamarin.UWP.UserControls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Pivot 
+            Name="MainPivot"
+            Style="{ThemeResource PivotSmallHeaderStyle}"
+            Margin="0,0,0,48"
+            SelectionChanged="MainPivot_OnSelectionChanged">
+
+            <PivotItem
+                Header="OPEN ISSUES">
+
+                <controls:PullToRefreshListView 
+                    Name="OpenIssuesList"
+                    ItemsSource="{Binding Issues}"
+                    SelectionMode="Single"
+                    SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                    HorizontalAlignment="Stretch"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    HorizontalContentAlignment="Stretch"
+                    SelectionChanged="OpenIssuesList_OnSelectionChanged"
+                    ItemTemplate="{StaticResource IssuesListViewTemplate}"/>
+
+            </PivotItem>
+
+            <PivotItem
+                Header="CLOSED ISSUES">
+
+                <controls:PullToRefreshListView 
+                    Name="ClosedIssuesList"
+                    ItemsSource="{Binding ClosedIssues}"
+                    SelectionMode="Single"
+                    SelectedIndex="{Binding ClosedSelectedIssue, Mode=TwoWay}"
+                    HorizontalAlignment="Stretch"
+                    RefreshCommand="{Binding ClosedRefreshCommand}"
+                    HorizontalContentAlignment="Stretch"
+                    SelectionChanged="ClosedIssuesList_OnSelectionChanged"
+                    ItemTemplate="{StaticResource IssuesListViewTemplate}"/>
+
+            </PivotItem>
+
+        </Pivot>
+
+        <CommandBar
+            VerticalAlignment="Bottom">
+
+            <AppBarButton Icon="Refresh"
+                          Label="Refresh"
+                          Command="{Binding RefreshCommand}"/>
+        </CommandBar>
+    </Grid>
+</views:MvxWindowsPage>

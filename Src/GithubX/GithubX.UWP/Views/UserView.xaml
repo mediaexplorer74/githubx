@@ -1,0 +1,493 @@
+﻿<views:MvxWindowsPage
+    x:Class="GithubXamarin.UWP.Views.UserView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GithubXamarin.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:MvvmCross.WindowsUWP.Views"
+    xmlns:usercontrols="using:GithubXamarin.UWP.UserControls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer
+            HorizontalScrollMode="Enabled"
+            Grid.Row="1" 
+            Grid.Column="1">
+
+                <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,10,0,10" 
+                Name="ProfileStackPanel">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Rectangle 
+                        Height="100" 
+                        Width="100">
+                            <Rectangle.Fill>
+                                <ImageBrush ImageSource="{Binding User.AvatarUrl}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                            Name="ProfileDetails">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBlock 
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Name}"
+                                Style="{ThemeResource SubtitleTextBlockStyle}"
+                                FontWeight="ExtraBold"
+                                Grid.Row="0" 
+                                Grid.Column="2"/>
+                                <TextBlock 
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Login}"
+                                FontSize="14"
+                                Grid.Row="1"
+                                Grid.Column="2"/>
+
+                                <FontIcon 
+                                FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                Glyph="&#xf041;" 
+                                Grid.Row="2"
+                                Grid.Column="0"/>
+                                <TextBlock
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Location}" 
+                                FontSize="14"
+                                Grid.Row="2" 
+                                Grid.Column="2"/>
+
+                                <FontIcon 
+                                FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                Glyph="&#xf0e0;"
+                                Grid.Row="3" 
+                                Grid.Column="0"/>
+                                <TextBlock 
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Email}" 
+                                FontSize="14"
+                                Grid.Row="3" 
+                                Grid.Column="2"/>
+
+                                <FontIcon
+                                FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                Glyph="&#xf2bb;"
+                                Grid.Row="4"
+                                Grid.Column="0"/>
+                                <TextBlock 
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Bio}" 
+                                FontSize="14" 
+                                TextWrapping="Wrap"
+                                Grid.Row="4"
+                                Grid.Column="2"/>
+
+                                <FontIcon
+                                FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                Glyph="&#xf1ad;"
+                                Grid.Row="5"
+                                Grid.Column="0"/>
+                                <TextBlock 
+                                Margin="0,5,0,5"
+                                Text="{Binding User.Company}"
+                                FontSize="14"
+                                Grid.Row="5"
+                                Grid.Column="2"/>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <ToggleButton 
+                Visibility="{Binding IsUserCurrent, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                IsChecked="{Binding IsUserFollowed}" 
+                Command="{Binding FollowClickCommand}">
+
+                <ToggleButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon 
+                                FontFamily="ms-appx:/Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                Glyph="&#xf234;"/>
+                        <TextBlock 
+                                Text="Follow"
+                                Margin="5,0,0,0"/>
+                    </StackPanel>
+                </ToggleButton.Content>
+            </ToggleButton>
+
+            <ScrollViewer 
+            Grid.Row="3" 
+            Grid.Column="1"
+            Margin="0,0,0,48">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="User Stats:" FontSize="24" FontWeight="Bold"/>
+
+                    <Grid Margin="0,10,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            Background="Transparent"
+                            Command="{Binding FollowersClickCommand}">
+
+                            <Button.Content>
+
+                                <FontIcon 
+                                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                        Glyph="&#xf0c0;"
+                                        Opacity="0.6"
+                                        Margin="10,0,0,5"
+                                        
+                                        Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                            </Button.Content>
+                        </Button>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Background="Transparent"
+                            Command="{Binding FollowersClickCommand}">
+
+                            <Button.Content>
+
+                                <TextBlock 
+                                        Text="Followers:" 
+                                        Style="{ThemeResource BodyTextBlockStyle}"
+                                        Margin="0,0,0,5"
+                                        Opacity="0.6"
+                                        Grid.Column="1"/>
+
+                            </Button.Content>
+                        </Button>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Background="Transparent"
+                            Command="{Binding FollowersClickCommand}">
+
+                            <Button.Content>
+
+                                <TextBlock 
+                                        Style="{ThemeResource BodyTextBlockStyle}"
+                                        Text="{Binding User.Followers}" 
+                                        Margin="0,0,0,5"
+                                        Grid.Column="2"/>
+
+                            </Button.Content>
+                        </Button>
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            Background="Transparent"
+                            Command="{Binding FollowingClickCommand}">
+
+                            <Button.Content>
+
+                                <FontIcon 
+                                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                                        Glyph="&#xf0c0;"
+                                        Opacity="0.6"
+                                        Margin="10,0,0,5"
+                                        
+                                        Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                            </Button.Content>
+                        </Button>
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Background="Transparent"
+                            Command="{Binding FollowingClickCommand}">
+
+                            <Button.Content>
+
+                                <TextBlock 
+                                        Text="Following:" 
+                                        Style="{ThemeResource BodyTextBlockStyle}"
+                                        Margin="0,0,0,5"
+                                        Opacity="0.6"
+                                        Grid.Column="1"/>
+
+                            </Button.Content>
+                        </Button>
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Background="Transparent"
+                            Command="{Binding FollowingClickCommand}">
+
+                            <Button.Content>
+
+                                <TextBlock 
+                                        Style="{ThemeResource BodyTextBlockStyle}"
+                                        Text="{Binding User.Following}" 
+                                        Margin="0,0,0,5"
+                                        Grid.Column="2"/>
+
+                            </Button.Content>
+                        </Button>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph="&#xf0d6;"
+                        Opacity="0.6"
+                        Margin="10,0,0,5"
+                        Grid.Row="2"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Plan:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="2" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.Plan.Name}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="2" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph="&#xf11c;"
+                        Opacity="0.6"
+                        Margin="10,0,0,5"
+                        Grid.Row="3"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Type:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="3" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.Type}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="3" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph=""
+                        Margin="10,0,0,5"
+                        Grid.Row="4"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Private Repos:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="4" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.TotalPrivateRepos}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="4" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph=""
+                        Margin="10,0,0,5"
+                        Grid.Row="5"
+                        Grid.Column="0"/>
+
+                        <TextBlock
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Public Repos:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="5" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.PublicRepos}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="5" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph="&#xf0a0;"
+                        Opacity="0.6"
+                        Margin="10,0,0,5"
+                        Grid.Row="6"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Disk Usage:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="6" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.DiskUsage}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="6" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph="&#xf017;"
+                        Opacity="0.6"
+                        Margin="10,0,0,5"
+                        Grid.Row="7"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Created At:" 
+                        Margin="10,0,0,5"
+                        Grid.Row="7" 
+                        Opacity="0.6"
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.CreatedAt}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="7" 
+                        Grid.Column="2"/>
+
+                        <FontIcon 
+                        FontFamily="Resources/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                        Glyph="&#xf234;"
+                        Opacity="0.6"
+                        Margin="10,0,0,5"
+                        Grid.Row="8"
+                        Grid.Column="0"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="Hireable?:" 
+                        Margin="10,0,0,5"
+                        Opacity="0.6"
+                        Grid.Row="8" 
+                        Grid.Column="1"/>
+
+                        <TextBlock 
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{Binding User.Hireable}" 
+                        Margin="10,0,0,5"
+                        Grid.Row="8" 
+                        Grid.Column="2"/>
+
+                    </Grid>
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+        <CommandBar
+            VerticalAlignment="Bottom">
+
+            <AppBarButton Icon="Edit"
+                          Label="Edit"
+                          IsEnabled="{Binding IsUserCurrent}"
+                          Command="{Binding EditCommand}"/>
+
+            <AppBarButton Icon="Refresh"
+                          Label="Refresh"
+                          Command="{Binding RefreshCommand}"/>
+
+            <AppBarButton Label="Share"
+                          Command="{Binding ShareCommand}">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE72d;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Grid>
+</views:MvxWindowsPage>
+
+
+
