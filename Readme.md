@@ -35,9 +35,9 @@ GithubX planned as re-dev (2nd attempt to dev) some simplest retro-client for Wi
 
 
 ## Credits
-- Archived GitIt project (WP8.1-based, as I remember)... url repo is lost 
-- GitHub SDK & Microsoft-GitHub team
-- MVVMCross team
+- https://github.com/prajjwaldimri/GithubXamarin Archived GitIt project 
+- GitHub SDK & Microsoft's Xamarin (Forms&Native)
+- MVVMCross library
 
 ## ..
 AS IS. RnD only. No support. DIY.

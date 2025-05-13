@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmCross.Localization", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.WindowsUWP", "GithubX\MvvmCross.WindowsUWP\MvvmCross.WindowsUWP.csproj", "{C7E12CDD-6370-426A-8907-0ED6AF353F79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubX.Droid", "GithubX\GithubXamarin.Droid\GithubX.Droid.csproj", "{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +221,30 @@ Global
 		{C7E12CDD-6370-426A-8907-0ED6AF353F79}.Release|x64.Build.0 = Release|x64
 		{C7E12CDD-6370-426A-8907-0ED6AF353F79}.Release|x86.ActiveCfg = Release|x86
 		{C7E12CDD-6370-426A-8907-0ED6AF353F79}.Release|x86.Build.0 = Release|x86
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|ARM.Build.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x64.Build.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|ARM.ActiveCfg = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|ARM.Build.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|ARM.Deploy.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x64.ActiveCfg = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x64.Build.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x64.Deploy.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x86.Build.0 = Release|Any CPU
+		{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
