@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmCross.Localization", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.WindowsUWP", "GithubX\MvvmCross.WindowsUWP\MvvmCross.WindowsUWP.csproj", "{C7E12CDD-6370-426A-8907-0ED6AF353F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubX.Droid", "GithubX\GithubXamarin.Droid\GithubX.Droid.csproj", "{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubX.Droid", "GithubX\GithubX.Droid\GithubX.Droid.csproj", "{CF5DB05C-82D1-43C2-868B-4E0EF1086E89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
