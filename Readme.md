@@ -2,10 +2,15 @@
 
 ![Logo](Images/logo.png)
 
-Some Remake ((GithubX2 codename))of old sweet GitIt project... This is my second attempt after 4-5 years, yea!  I decided to port that "old sweetie" from obsolete portable to normal multiplatform one (targets are UWP and, mabe, Android). 
+Some micro-remake (GithubX2 codename) of prajjwaldimri's GitIt/GitHubXamarin project... This is my second attempt after 4-5 years, yea!  I decided to port that "old sweetie" from obsolete portable to normal multiplatform one (targets are UWP and, mabe, Android). 
 
 ## About R&D
 GithubX planned as re-dev (2nd attempt to dev) some simplest retro-client for Windows 10 Mobile retro-os. The point of interest (research): I remembered that 5 years ago GitIt app successfully catches push notifications (ignoring MS "push system/servers" malfunction).. but idk how =)  
+
+## Status
+- All thing gone bad. Solution damaged (Android part ca't build, Windows part can't auth).
+- Project on hold (searching another src codes / methods to repair GitHub for Windows Phone)
+
 
 ## Tech details
 - Based on Xamarin multi-platform technology. 
