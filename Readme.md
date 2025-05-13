@@ -13,9 +13,9 @@ GithubX planned as re-dev (2nd attempt to dev) some simplest retro-client for Wi
 - Min. Win. SDK (for UWP target) : 10240 (Hello, Astoria)
 
 ## Screenshots
-![W11](Images/shot01.png)
-![W11](Images/shot02.png)
-![W11](Images/shot03.png)
+![W11](Images/sshot01.png)
+![W11](Images/sshot02.png)
+![W11](Images/sshot03.png)
 
 
 ## What's new?
